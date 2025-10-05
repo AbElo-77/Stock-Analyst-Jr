@@ -1,4 +1,4 @@
-# Stock Analyst Jr. – A Java-Based Stock Prediction System
+# Stock Analyst Jr. 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
