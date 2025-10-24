@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 
-public class fetchIndicators {
+public class FetchIndicators {
     private static final String API_KEY = ""; 
     private static final String API_SYMBOL = "AMZN"; 
 

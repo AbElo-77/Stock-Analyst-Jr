@@ -7,12 +7,12 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 
-public class fetchCoreData {
+public class FetchCoreData {
     private static final String API_KEY = ""; 
     private static final String API_SYMBOL = "AMZN"; 
 
     public static void main(String[] args) throws Exception {
-        GETIntraday(12); // Limit of 25/day on Free Plan
+        // GETIntraday(12); Limit of 25/day on Free Plan
         GETDaily(); 
     }
 
@@ -74,7 +74,7 @@ public class fetchCoreData {
     public static void GETDaily() { 
 
 
-        String alphaVantageAPI = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&";
+        String alphaVantageAPI = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&";
         URI alphaVantageURI = java.net.URI.create(alphaVantageAPI + 
                                                       "symbol=" + API_SYMBOL 
                                                       + "&outputsize=full&apikey=" 
