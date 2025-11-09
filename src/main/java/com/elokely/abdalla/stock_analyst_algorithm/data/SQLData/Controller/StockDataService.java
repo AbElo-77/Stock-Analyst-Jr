@@ -3,6 +3,9 @@ package com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.StockData;
+import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Repositories.StockDataRepository;
+
 import java.time.LocalDateTime;
 import java.util.List;
 

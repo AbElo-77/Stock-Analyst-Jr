@@ -48,8 +48,8 @@ public class FetchCoreData {
                     runningTotal += Integer.parseInt(columns[5]); 
                     counter++;
 
-                    if (counter == 20) {
-                        String result = Integer.toString(runningTotal/20) + "\n";
+                    if (counter == 288) {
+                        String result = Integer.toString(runningTotal/288) + "\n";
                         outputReader.write(result.getBytes());
 
                         runningTotal = 0; 

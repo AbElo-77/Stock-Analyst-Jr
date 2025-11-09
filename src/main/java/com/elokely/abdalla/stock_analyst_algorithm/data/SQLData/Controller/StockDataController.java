@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.StockData;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
