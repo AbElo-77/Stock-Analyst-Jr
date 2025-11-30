@@ -153,7 +153,7 @@ public class FetchIndicators {
             String alphaVantageAPI = "https://www.alphavantage.co/query?function=SMA&";
             URI alphaVantageURI = java.net.URI.create(alphaVantageAPI + 
                                                       "symbol=" + API_SYMBOL 
-                                                      + "&interval=daily&month="
+                                                      + "&interval=weekly&month="
                                                       + yearCounter + "-" + monthString 
                                                       + "&time_period=500&series_type=open&apikey=" 
                                                       + API_KEY + "&datatype=csv"); 

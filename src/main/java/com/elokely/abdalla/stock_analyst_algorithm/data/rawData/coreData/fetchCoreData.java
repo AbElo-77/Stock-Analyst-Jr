@@ -75,8 +75,7 @@ public class FetchCoreData {
                     break; 
                 }
             }
-
-            
+  
         }
 
         if (currReader != null) currReader.close(); 

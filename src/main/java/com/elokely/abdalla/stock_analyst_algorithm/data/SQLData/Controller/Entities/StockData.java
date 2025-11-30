@@ -1,7 +1,7 @@
 package com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Entity
@@ -13,7 +13,7 @@ public class StockData {
     private long id; 
 
     private String symbol; 
-    private LocalDateTime timestamp;
+    private LocalDate timestamp;
     private int high; 
     private int low; 
     private int open; 
@@ -38,7 +38,7 @@ public class StockData {
         return symbol;
     }
 
-    public LocalDateTime getTimestamp() {
+    public LocalDate getTimestamp() {
         return timestamp;
     }
 
@@ -70,7 +70,7 @@ public class StockData {
         this.symbol = symbol;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(LocalDate timestamp) {
         this.timestamp = timestamp;
     }
 

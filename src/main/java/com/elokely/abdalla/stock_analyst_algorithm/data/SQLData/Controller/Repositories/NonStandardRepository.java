@@ -5,12 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.NonStandardData;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public interface NonStandardRepository extends JpaRepository<NonStandardData, Long> {
     List<NonStandardData> findBySymbol(String symbol);
     List<NonStandardData> findBySymbolAndTimestampBetween(
-        String symbol, LocalDateTime startDate, LocalDateTime endDate);
+        String symbol, LocalDate startDate, LocalDate endDate);
 }

@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.NonStandardService;
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.NonStandardData;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/stocks")
+@RequestMapping("/api/nonstandard")
 public class NonStandardController {
 
     private final NonStandardService nonStandardService;
@@ -35,8 +36,8 @@ public class NonStandardController {
     @GetMapping("/{symbol}/range")
     public ResponseEntity<List<NonStandardData>> getStocksByDateRange(
             @PathVariable String symbol,
-            @RequestParam LocalDateTime startDate,
-            @RequestParam LocalDateTime endDate) {
+            @RequestParam LocalDate startDate,
+            @RequestParam LocalDate endDate) {
         List<NonStandardData> stocks = nonStandardService.getStockDataBySymbolAndDateRange(symbol, startDate, endDate);
         return ResponseEntity.ok(stocks);
     }

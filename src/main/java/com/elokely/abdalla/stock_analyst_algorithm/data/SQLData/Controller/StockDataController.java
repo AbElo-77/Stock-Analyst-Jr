@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.StockDataService;
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.StockData;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -35,8 +36,8 @@ public class StockDataController {
     @GetMapping("/{symbol}/range")
     public ResponseEntity<List<StockData>> getStocksByDateRange(
             @PathVariable String symbol,
-            @RequestParam LocalDateTime startDate,
-            @RequestParam LocalDateTime endDate) {
+            @RequestParam LocalDate startDate,
+            @RequestParam LocalDate endDate) {
         List<StockData> stocks = stockDataService.getStockDataBySymbolAndDateRange(symbol, startDate, endDate);
         return ResponseEntity.ok(stocks);
     }
