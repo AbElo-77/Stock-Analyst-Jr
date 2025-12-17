@@ -1,6 +1,7 @@
 package com.elokely.abdalla.stock_analyst_algorithm.backend.algorithmicProcessing.prePostProcessing;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,16 +34,18 @@ public class FeatureAssembly {
         LocalDate endDate = LocalDate.of(2025, 12, 31); 
         
         for (LocalDate curDate = startDate; curDate.isBefore(endDate); curDate = curDate.plusDays(1)) {
-
             featureSamples.add(new FeatureSamples(createDaily(API_SYMBOL, curDate), 
                                                   createWeekly(API_SYMBOL, curDate.minusDays(7), curDate),
-                                                  createIntraday(API_SYMBOL, curDate))); 
+                                                  createIntraday(API_SYMBOL, curDate)));
         }
     }
     
     public double[][] createIntraday(String API, LocalDate timestamp) {
 
-        List<StockData> intradayData = stockDataService.getStockDataBySymbolAndDateRange(API, timestamp, timestamp); 
+        LocalDateTime start = timestamp.atStartOfDay();
+        LocalDateTime end = timestamp.atTime(23,59,59);
+
+        List<StockData> intradayData = stockDataService.getStockDataBySymbolAndDateRange(API, start, end);
         int rows = intradayData.size();
         double[][] intradayFeatures = new double[rows][14];
 

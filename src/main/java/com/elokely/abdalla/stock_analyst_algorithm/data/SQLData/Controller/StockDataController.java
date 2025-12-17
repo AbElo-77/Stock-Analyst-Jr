@@ -8,6 +8,7 @@ import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.StockDataService
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.StockData;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -38,7 +39,9 @@ public class StockDataController {
             @PathVariable String symbol,
             @RequestParam LocalDate startDate,
             @RequestParam LocalDate endDate) {
-        List<StockData> stocks = stockDataService.getStockDataBySymbolAndDateRange(symbol, startDate, endDate);
+        LocalDateTime start = startDate.atStartOfDay();
+        LocalDateTime end = endDate.atTime(23,59,59);
+        List<StockData> stocks = stockDataService.getStockDataBySymbolAndDateRange(symbol, start, end);
         return ResponseEntity.ok(stocks);
     }
 }

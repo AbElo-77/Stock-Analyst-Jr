@@ -138,7 +138,7 @@ public class FetchCoreData {
         }
     }
 
-        public static void GETVWAP(int numRequests) { 
+    public static void GETVWAP(int numRequests) { 
 
         int curMonth = 1; 
         String monthString = "01"; 
@@ -193,7 +193,7 @@ public class FetchCoreData {
         }
     }
 
-            public static void GETOBV(int numRequests) { 
+    public static void GETOBV(int numRequests) { 
 
         int curMonth = 1; 
         String monthString = "01"; 

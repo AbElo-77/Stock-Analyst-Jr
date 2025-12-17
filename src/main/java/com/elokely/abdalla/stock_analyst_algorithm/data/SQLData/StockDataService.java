@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Entities.StockData;
 import com.elokely.abdalla.stock_analyst_algorithm.data.SQLData.Controller.Repositories.StockDataRepository;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -28,7 +28,7 @@ public class StockDataService {
     }
 
     public List<StockData> getStockDataBySymbolAndDateRange(
-            String symbol, LocalDate startDate, LocalDate endDate) {
+            String symbol, LocalDateTime startDate, LocalDateTime endDate) {
         return stockDataRepository.findBySymbolAndTimestampBetween(symbol, startDate, endDate);
     }
 
