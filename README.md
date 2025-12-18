@@ -1,6 +1,5 @@
 # Stock Analyst Jr. 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
 ## Table of Contents
 
@@ -87,6 +86,10 @@ java -jar target/StockAnalystJr.jar
 
 This project is licensed under the MIT License.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+
 ## Contacts
 
-...
+GitHub: AbElo-77
+Email: abdallaelokely@gmail.com
+
