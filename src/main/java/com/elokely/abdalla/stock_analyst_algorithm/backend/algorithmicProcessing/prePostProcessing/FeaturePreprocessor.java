@@ -63,7 +63,6 @@ public class FeaturePreprocessor implements CommandLineRunner {
 
                 write(buf, s.getDailyFeatures());
                 write(buf, s.getWeeklyFeatures());
-
                 for (double[] row : s.getIntradayFeatures()) {
                     write(buf, row);
                 }
@@ -75,7 +74,6 @@ public class FeaturePreprocessor implements CommandLineRunner {
 
         } catch (Exception e) {
         }
-
         System.exit(0);
     }
 
