@@ -12,20 +12,20 @@ public class FetchIndicators {
     private static final String API_SYMBOL = "AMZN"; 
 
     public static void main(String[] args) throws Exception {
-        GETSMA_LongTerm(12);
-        GETEMA_LongTerm(12);
-        GETSMA_ShortTerm(12);
-        GETEMA_ShortTerm(12);
+        GETSMA_LongTerm(300);
+        GETEMA_LongTerm(300);
+        GETSMA_ShortTerm(300);
+        GETEMA_ShortTerm(300);
 
-        GETMACD(12);
-        GETADX(12);
-        GETATR(12);
+        GETMACD(300);
+        GETADX(300);
+        GETATR(300);
 
 
-        GETStoch(12); 
-        GETRSI(12);
-        GETAroon(12);
-        GETBBands(12);
+        GETStoch(300); 
+        GETRSI(300);
+        GETAroon(300);
+        GETBBands(300);
 
         GETCPI(); 
         GETGDP(); 

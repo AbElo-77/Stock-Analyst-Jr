@@ -16,9 +16,9 @@ public class FetchCoreData {
     private static final String API_SYMBOL = "AMZN"; 
 
     public static void main(String[] args) throws Exception {
-        GETIntraday(12);
-        GETVWAP(12); 
-        GETOBV(12); 
+        GETIntraday(300);
+        GETVWAP(300); 
+        GETOBV(300); 
 
         GETOverview(); 
         GETDaily(); 

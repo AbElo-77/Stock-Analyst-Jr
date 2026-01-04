@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -44,12 +45,16 @@ public class FeaturePreprocessor implements CommandLineRunner {
         int intradayDim = samples.get(0).getIntradayFeatures().length 
                           * samples.get(0).getIntradayFeatures()[0].length;
 
-        try (FileChannel fc = FileChannel.open(
+        try {
+            if (OUT.getParent() != null) {
+            Files.createDirectories(OUT.getParent());
+            }
+            try (FileChannel fc = FileChannel.open(
                 OUT,
                 StandardOpenOption.CREATE,
                 StandardOpenOption.WRITE,
                 StandardOpenOption.TRUNCATE_EXISTING
-        )) {
+            )) {
 
             ByteBuffer buf = ByteBuffer.allocateDirect(1024 * 1024).order(ByteOrder.LITTLE_ENDIAN);
 
@@ -70,11 +75,13 @@ public class FeaturePreprocessor implements CommandLineRunner {
                 reset(fc, buf);
             }
 
-            reset(fc, buf);
+                reset(fc, buf);
+
+            }
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.exit(0);
     }
 
     private void write(ByteBuffer buf, double[] arr) {
