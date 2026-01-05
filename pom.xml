@@ -110,6 +110,11 @@
 			<artifactId>tensorflow-engine</artifactId>
 			<version>0.27.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.haifengl</groupId>
+			<artifactId>smile-core</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
